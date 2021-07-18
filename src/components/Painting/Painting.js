@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import defaultImages from './default.jpg';
+import styles from './Painting.module.css';
 
 const Painting = ({
   imageUrl = defaultImages,
@@ -9,7 +10,7 @@ const Painting = ({
   price,
   quantity,
 }) => (
-  <div>
+  <div className={styles.container}>
     <img src={imageUrl ?? defaultImages} alt={title} width="480" />
     <h2>{title}</h2>
     <p>
@@ -18,7 +19,9 @@ const Painting = ({
     <p>Цена:{price} кредитов</p>
 
     <p>Доступность: {quantity < 10 ? 'Доступно' : 'Заканчиваются'}</p>
-    <button type="button">Добавить в корзину</button>
+    <button type="button" className={styles.btn}>
+      Добавить в корзину
+    </button>
   </div>
 );
 

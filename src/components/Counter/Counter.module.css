@@ -1,0 +1,18 @@
+.counter {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.controls > button:active {
+  box-shadow: 2px 5px 2px 0 rgb(0 0 0 / 0.5);
+}
+
+.value {
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size: 64px;
+  font-family: monospace;
+  text-align: center;
+}
