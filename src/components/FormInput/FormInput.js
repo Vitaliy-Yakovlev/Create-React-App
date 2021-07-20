@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
+import s from './FormInput.module.css';
 
 class InputForm extends Component {
   state = {
@@ -36,10 +37,15 @@ class InputForm extends Component {
 
   render() {
     return (
-      <form htmlFor={this.nameInput} onSubmit={this.handleSubmit}>
-        <label>
+      <form
+        className={s.form}
+        htmlFor={this.nameInput}
+        onSubmit={this.handleSubmit}
+      >
+        <label className={s.label}>
           Name
           <input
+            className={s.input}
             name="name"
             type="text"
             value={this.state.name}
@@ -48,9 +54,10 @@ class InputForm extends Component {
           ></input>
         </label>
 
-        <label htmlFor={this.phoneInput}>
+        <label className={s.label} htmlFor={this.phoneInput}>
           Phone
           <input
+            className={s.input}
             type="tel"
             name="phone"
             value={this.state.phone}
@@ -61,7 +68,7 @@ class InputForm extends Component {
 
         <p>Ваш уровень:</p>
 
-        <label>
+        <label className={s.label}>
           Junior
           <input
             type="radio"
@@ -102,8 +109,8 @@ class InputForm extends Component {
           ></input>
         </label>
 
-        <button type="submit" disabled={!this.state.licence}>
-          Поправить
+        <button className={s.btn} type="submit" disabled={!this.state.licence}>
+          Отправить
         </button>
       </form>
     );

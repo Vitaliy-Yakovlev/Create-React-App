@@ -16,6 +16,15 @@ import InputForm from './components/FormInput';
 import TodoEditior from './components/TodoEditior';
 import shortid from 'shortid';
 import Filter from './components/Filter';
+//4
+import Modal from './components/Modal';
+import ContentModal from './components/Modal/ContentModal';
+import Button from './components/Modal/Button';
+import Clock from './components/Modal/Clock';
+import IconButton from './components/IconButton';
+import { ReactComponent as AddIcon } from './components/icon/add.svg';
+
+// import { ReactComponent as DeleteIcon } from './components/icon/delete.svg';
 
 import paintings from './components/Painting/paintings.json';
 import colorPiker from './components/ColorPicker/colorPicker.json';
@@ -27,26 +36,56 @@ import Statistics from './components/HomeWork-1/Statistics/Statistics';
 import FriendList from './components/HomeWork-1/FriendList/FriendList';
 import TransactionHistory from './components/HomeWork-1/TransactionHistory/TransactionHistory';
 import HomeWorkPages from './components/HomeWork-1/HomeWorkPages/HomeWorkPages';
-//Home Work #2.1======================================================================================
-import HomeWorkPages2 from './components/HomeWork-2/HomeWorkPages2';
-import Feedback from './components/HomeWork-2/Feedback';
 
 import user from './components/HomeWork-1/Profile/user.json';
 import statisticalData from './components/HomeWork-1/Statistics/statistical-data.json';
 import friends from './components/HomeWork-1/FriendList/friends.json';
 import transactions from './components/HomeWork-1/TransactionHistory/transactions.json';
+import todos from './components/TodoList/todos.json';
 //Home Work #1======================================================================================
+
+//Home Work #2.1======================================================================================
+import HomeWorkPages2 from './components/HomeWork-2/HomeWorkPages2';
+import Feedback from './components/HomeWork-2/Feedback';
+//Home Work #2.1======================================================================================
+import Phonebook from './components/HomeWork-2/Phonebook';
+//Home Work #2.2======================================================================================
+
+//Home Work #2.2======================================================================================
 
 class App extends Component {
   state = {
-    todos: [
-      { id: 'id-1', text: 'Выучить основы React', completed: false },
-      { id: 'id-2', text: 'Зазобрвтся React Router', completed: false },
-      { id: 'id-3', text: 'Пережить Redux', completed: false },
-    ],
-
+    todos: todos,
     filter: '',
+    showModal: false,
   };
+
+  componentDidMount() {
+    console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    const passedTodos = JSON.parse(todos);
+
+    if (passedTodos) {
+      this.setState({ todos: passedTodos });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App componentDidUpdate');
+
+    const nextTodos = this.state.todos;
+    const prevTodos = prevState.todos;
+
+    if (nextTodos !== prevTodos) {
+      console.log('Обновилось поле todos, записываю todos в хранилище');
+      localStorage.setItem('todos', JSON.stringify(nextTodos));
+    }
+
+    // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
+    //   this.toggleModal();
+    // }
+  }
 
   chengeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
@@ -60,6 +99,8 @@ class App extends Component {
     };
 
     this.setState(({ todos }) => ({ todos: [todo, ...todos] }));
+
+    this.toggleModal();
   };
 
   deletTodo = todoId => {
@@ -82,10 +123,16 @@ class App extends Component {
     }, 1000);
   };
 
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
+
   render() {
     const { todos, filter } = this.state;
-
     const totalTodos = todos.length;
+
     const complatedTotal = todos.reduce(
       (total, todo) => (todo.completed ? total + 1 : total),
       0,
@@ -96,6 +143,8 @@ class App extends Component {
     const visibleTodos = todos.filter(todo =>
       todo.text.toLowerCase().includes(normalizedFilter),
     );
+
+    const { showModal } = this.state;
 
     return (
       <>
@@ -112,16 +161,30 @@ class App extends Component {
           {/* 2 */}
           <Counter initialValue={10} />
           <Dropdown />
+          <IconButton onClick={this.toggleModal} aria-label="Добавить todo">
+            <AddIcon width="40px" hanging="40px" fill="#fff" />
+          </IconButton>
           <TodoTotal total={totalTodos} learned={complatedTotal} />
+          {/* 3 */}
+          <Filter value={filter} onChenge={this.chengeFilter} />
+          {/* 3 */}
           <TodoList
             todos={visibleTodos}
             onDeletTodo={this.deletTodo}
             onToggleCompleted={this.toggleCompleted}
           />
           {/* 3 */}
-          <Filter value={filter} onChenge={this.chengeFilter} />
           <InputForm onSubmit={this.formSubmitHedler} />
-          <TodoEditior onSubmit={this.addTodo} />
+          {/* 3 */}
+          {/* 4 */}
+          <Button onClick={this.toggleModal} text="Open Modal" />
+          {showModal && (
+            <Modal onClose={this.toggleModal}>
+              <ContentModal onClick={this.toggleModal} />
+              <TodoEditior onSubmit={this.addTodo} />
+            </Modal>
+          )}
+          <Clock />
 
           {/* Class Work ============================================*/}
           {/* Home Work-1 ===========================================*/}
@@ -142,6 +205,7 @@ class App extends Component {
           {/* Home Work-2.1 =========================================*/}
           <HomeWorkPages2>
             <Feedback />
+            <Phonebook />
           </HomeWorkPages2>
           {/* Home Work-2.1 =========================================*/}
         </Comtainer>

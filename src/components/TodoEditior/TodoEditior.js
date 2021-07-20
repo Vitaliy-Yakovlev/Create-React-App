@@ -4,6 +4,7 @@ import s from './TodoEditior.module.css';
 class TodoEditor extends Component {
   state = {
     message: '',
+    showModal: false,
   };
 
   handleChende = e => {
@@ -18,17 +19,25 @@ class TodoEditor extends Component {
     this.setState({ message: '' });
   };
 
+  handleModal() {
+    this.props.toggleModal();
+  }
+
   // reset = () => {
   //   this.setState({ message: '' });
   // };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <textarea
-          value={this.state.message}
-          onChange={this.handleChende}
-        ></textarea>
+      <form className={s.form} onSubmit={this.handleSubmit}>
+        <label className={s.label}>
+          Добавить к списку
+          <input
+            className={s.input}
+            value={this.state.message}
+            onChange={this.handleChende}
+          ></input>
+        </label>
 
         <button type="submit" className={s.btn}>
           Сохранить

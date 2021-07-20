@@ -1,12 +1,11 @@
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  margin-bottom: 150px;
-
-  outline: 1px solid black;
-}
-
 .title {
   text-align: center;
+}
+
+.container {
+  margin: auto auto;
+  width: 500px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 15px;
 }

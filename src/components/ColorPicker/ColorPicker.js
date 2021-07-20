@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+
 import styles from './ColorPicker.module.css';
 
-class ColorPicker extends Component {
+class ColorPicker extends PureComponent {
   state = {
     activOptionIndx: 0,
   };
+
+  // PureComponent =>
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   return nextState.activOptionIndx !== this.state.activOptionIndx;
+  // }
 
   setActiveIndx = i => {
     this.setState({
@@ -23,6 +29,8 @@ class ColorPicker extends Component {
   };
 
   render() {
+    console.log(`Re-render : ${Date.now()}`);
+
     const { activOptionIndx } = this.state;
     const { options } = this.props;
     const { label } = options[activOptionIndx];

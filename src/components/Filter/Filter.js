@@ -1,9 +1,15 @@
 import React from 'react';
+import s from './Filter.module.css';
 
 const Filter = ({ value, onChenge }) => (
-  <label>
+  <label className={s.label}>
     Фильтер по имени
-    <input type="text" value={value} onChange={onChenge}></input>
+    <input
+      className={s.input}
+      type="text"
+      value={value}
+      onChange={onChenge}
+    ></input>
   </label>
 );
 
