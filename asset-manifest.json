@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/create-react-app/static/css/main.e3c4a37f.chunk.css",
-    "main.js": "/create-react-app/static/js/main.79c00622.chunk.js",
-    "main.js.map": "/create-react-app/static/js/main.79c00622.chunk.js.map",
+    "main.css": "/create-react-app/static/css/main.13c9d61b.chunk.css",
+    "main.js": "/create-react-app/static/js/main.d9928f49.chunk.js",
+    "main.js.map": "/create-react-app/static/js/main.d9928f49.chunk.js.map",
     "runtime-main.js": "/create-react-app/static/js/runtime-main.2995280b.js",
     "runtime-main.js.map": "/create-react-app/static/js/runtime-main.2995280b.js.map",
     "static/css/2.bc922b9c.chunk.css": "/create-react-app/static/css/2.bc922b9c.chunk.css",
-    "static/js/2.e49b8652.chunk.js": "/create-react-app/static/js/2.e49b8652.chunk.js",
-    "static/js/2.e49b8652.chunk.js.map": "/create-react-app/static/js/2.e49b8652.chunk.js.map",
+    "static/js/2.21667645.chunk.js": "/create-react-app/static/js/2.21667645.chunk.js",
+    "static/js/2.21667645.chunk.js.map": "/create-react-app/static/js/2.21667645.chunk.js.map",
     "index.html": "/create-react-app/index.html",
     "static/css/2.bc922b9c.chunk.css.map": "/create-react-app/static/css/2.bc922b9c.chunk.css.map",
-    "static/css/main.e3c4a37f.chunk.css.map": "/create-react-app/static/css/main.e3c4a37f.chunk.css.map",
-    "static/js/2.e49b8652.chunk.js.LICENSE.txt": "/create-react-app/static/js/2.e49b8652.chunk.js.LICENSE.txt",
-    "static/media/default.2e01288c.jpg": "/create-react-app/static/media/default.2e01288c.jpg"
+    "static/css/main.13c9d61b.chunk.css.map": "/create-react-app/static/css/main.13c9d61b.chunk.css.map",
+    "static/js/2.21667645.chunk.js.LICENSE.txt": "/create-react-app/static/js/2.21667645.chunk.js.LICENSE.txt",
+    "static/media/add.125a09fa.svg": "/create-react-app/static/media/add.125a09fa.svg",
+    "static/media/default.2e01288c.jpg": "/create-react-app/static/media/default.2e01288c.jpg",
+    "static/media/delete.a59ececf.svg": "/create-react-app/static/media/delete.a59ececf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.2995280b.js",
     "static/css/2.bc922b9c.chunk.css",
-    "static/js/2.e49b8652.chunk.js",
-    "static/css/main.e3c4a37f.chunk.css",
-    "static/js/main.79c00622.chunk.js"
+    "static/js/2.21667645.chunk.js",
+    "static/css/main.13c9d61b.chunk.css",
+    "static/js/main.d9928f49.chunk.js"
   ]
 }
