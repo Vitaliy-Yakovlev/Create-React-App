@@ -16,6 +16,7 @@ import InputForm from './components/FormInput';
 import TodoEditior from './components/TodoEditior';
 import shortid from 'shortid';
 import Filter from './components/Filter';
+
 //4
 import Modal from './components/Modal';
 import ContentModal from './components/Modal/ContentModal';
@@ -23,6 +24,8 @@ import Button from './components/Modal/Button';
 import Clock from './components/Modal/Clock';
 import IconButton from './components/IconButton';
 import { ReactComponent as AddIcon } from './components/icon/add.svg';
+//5
+import Api from './Api';
 
 // import { ReactComponent as DeleteIcon } from './components/icon/delete.svg';
 
@@ -185,6 +188,8 @@ class App extends Component {
             </Modal>
           )}
           <Clock />
+          {/* 5 */}
+          <Api />
 
           {/* Class Work ============================================*/}
           {/* Home Work-1 ===========================================*/}
@@ -213,45 +218,5 @@ class App extends Component {
     );
   }
 }
-
-// function App() {
-//   return (
-//     <>
-//       <Comtainer>
-//         {/* Class Work ============================================*/}
-//         <Section title="Топ недели">
-//           <PaintingList items={paintings} />
-//         </Section>
-//         <Section title="Good" />
-//         <ColorPicker options={colorPiker} />
-//         <Alert text="Все пропало!!" type="success" />
-//         <Alert text="Все пропало!!" type="warning" />
-//         <Alert text="Все пропало!!" type="error" />
-//         {/* 2 */}
-//         <Counter initialValue={10} />
-//         <Dropdown />
-//         <TodoList />
-
-//         {/* Class Work ============================================*/}
-
-//         {/* Home Work-1 ===========================================*/}
-//         <HomeWorkPages>
-//           <Profile
-//             name={user.name}
-//             tag={user.tag}
-//             location={user.location}
-//             avatar={user.avatar}
-//             stats={user.stats}
-//           />
-//           <Statistics title="Upload stats" stats={statisticalData} />
-//           <Statistics stats={statisticalData} />
-//           <FriendList friends={friends} />
-//           <TransactionHistory items={transactions} />
-//         </HomeWorkPages>
-//         {/* Home Work-1 ===========================================*/}
-//       </Comtainer>
-//     </>
-//   );
-// }
 
 export default App;
