@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PokemonErrorView from '../PokemonErrorView';
 import PokemonDataView from '../PokemonDataView';
 import PokemonPendingView from '../PokemonPendingView';
+import pokemonAPI from '../services/pokemon-api';
 
 const Status = {
   IDLE: 'idle',
@@ -24,20 +25,10 @@ export default class PokemonInfo extends Component {
     if (prevName !== nextName) {
       this.setState({ status: Status.PENDING });
 
-      setTimeout(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${nextName}`)
-          .then(response => {
-            if (response.ok) {
-              return response.json();
-            }
-
-            return Promise.reject(
-              new Error(`Нет покемона с именем ${nextName}`),
-            );
-          })
-          .then(pokemon => this.setState({ pokemon, status: Status.RESOLVED }))
-          .catch(error => this.setState({ error, status: Status.REJECTED }));
-      }, 1000);
+      pokemonAPI
+        .fetchPokemon(nextName)
+        .then(pokemon => this.setState({ pokemon, status: Status.RESOLVED }))
+        .catch(error => this.setState({ error, status: Status.REJECTED }));
     }
   }
 
