@@ -13,6 +13,14 @@
   outline: none;
   box-shadow: 1px 2px 2px 0 rgb(0 0 0 / 0.5);
 }
+.btn:hover,
+.btn:focus {
+  background-color: rgb(29, 182, 225);
+}
+
+.btn:disabled {
+  background-color: rgb(209, 209, 209);
+}
 
 .btn {
   border: none;
@@ -29,9 +37,4 @@
   transition: box-shadow 250ms linear;
 
   border-radius: 10px;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: rgb(29, 182, 225);
 }

@@ -3,7 +3,7 @@ import s from './ContentModal.module.css';
 
 const ContentModal = ({ onClick }) => (
   <>
-    <h2>Привет это контент как children</h2>
+    <h2>Привет, это контент как children</h2>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

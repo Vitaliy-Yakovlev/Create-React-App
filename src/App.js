@@ -4,7 +4,7 @@ import PaintingList from './components/Painting/PaintingList';
 import Section from './components/Section/Section';
 import ColorPicker from './components/ColorPicker';
 import Alert from './components/Alert/Alert';
-import Comtainer from './components/Container/Container';
+import Container from './components/Container/Container';
 
 //2
 import Counter from './components/Counter';
@@ -13,7 +13,7 @@ import TodoList from './components/TodoList';
 import TodoTotal from './components/TodoList/TodoTotal';
 //3
 import InputForm from './components/FormInput';
-import TodoEditior from './components/TodoEditior';
+import TodoEdition from './components/TodoEdition';
 import shortid from 'shortid';
 import Filter from './components/Filter';
 
@@ -64,8 +64,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log('App componentDidMount');
-
     const todos = localStorage.getItem('todos');
     const passedTodos = JSON.parse(todos);
 
@@ -75,8 +73,6 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('App componentDidUpdate');
-
     const nextTodos = this.state.todos;
     const prevTodos = prevState.todos;
 
@@ -84,13 +80,9 @@ class App extends Component {
       console.log('Обновилось поле todos, записываю todos в хранилище');
       localStorage.setItem('todos', JSON.stringify(nextTodos));
     }
-
-    // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
-    //   this.toggleModal();
-    // }
   }
 
-  chengeFilter = e => {
+  changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
 
@@ -106,7 +98,7 @@ class App extends Component {
     this.toggleModal();
   };
 
-  deletTodo = todoId => {
+  deleteTodo = todoId => {
     this.setState(prevState => ({
       todos: prevState.todos.filter(todo => todo.id !== todoId),
     }));
@@ -136,7 +128,7 @@ class App extends Component {
     const { todos, filter } = this.state;
     const totalTodos = todos.length;
 
-    const complatedTotal = todos.reduce(
+    const completedTotal = todos.reduce(
       (total, todo) => (todo.completed ? total + 1 : total),
       0,
     );
@@ -151,7 +143,7 @@ class App extends Component {
 
     return (
       <>
-        <Comtainer>
+        <Container>
           {/* Class Work ============================================*/}
           <Section title="Топ недели">
             <PaintingList items={paintings} />
@@ -167,13 +159,13 @@ class App extends Component {
           <IconButton onClick={this.toggleModal} aria-label="Добавить todo">
             <AddIcon width="40px" hanging="40px" fill="#fff" />
           </IconButton>
-          <TodoTotal total={totalTodos} learned={complatedTotal} />
+          <TodoTotal total={totalTodos} learned={completedTotal} />
           {/* 3 */}
-          <Filter value={filter} onChenge={this.chengeFilter} />
+          <Filter value={filter} onChange={this.changeFilter} />
           {/* 3 */}
           <TodoList
             todos={visibleTodos}
-            onDeletTodo={this.deletTodo}
+            onDeleteTodo={this.deleteTodo}
             onToggleCompleted={this.toggleCompleted}
           />
           {/* 3 */}
@@ -184,7 +176,7 @@ class App extends Component {
           {showModal && (
             <Modal onClose={this.toggleModal}>
               <ContentModal onClick={this.toggleModal} />
-              <TodoEditior onSubmit={this.addTodo} />
+              <TodoEdition onSubmit={this.addTodo} />
             </Modal>
           )}
           <Clock />
@@ -213,7 +205,7 @@ class App extends Component {
             <Phonebook />
           </HomeWorkPages2>
           {/* Home Work-2.1 =========================================*/}
-        </Comtainer>
+        </Container>
       </>
     );
   }

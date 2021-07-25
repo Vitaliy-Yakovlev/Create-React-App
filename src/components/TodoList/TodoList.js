@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from './Todo';
 import s from './TodoList.module.css';
 
-const TodoList = ({ todos, onDeletTodo, onToggleCompleted }) => (
+const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
   <ul className={s.todoList}>
     {todos.map(({ id, text, completed }) => (
       <li key={id} className={s.item}>
@@ -10,7 +10,7 @@ const TodoList = ({ todos, onDeletTodo, onToggleCompleted }) => (
           text={text}
           completed={completed}
           onToggleCompleted={() => onToggleCompleted(id)}
-          onDeletTodo={() => onDeletTodo(id)}
+          onDeleteTodo={() => onDeleteTodo(id)}
         />
       </li>
     ))}
