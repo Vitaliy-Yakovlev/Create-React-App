@@ -19,7 +19,7 @@ export default function Counter() {
 
   return (
     <div className={s.counter}>
-      <span className={s.value}>{initialValue}</span>
+      <span className={s.value}>({initialValue})</span>
 
       <Controls onIncrement={handleIncrement} onDecrement={handleDecrement} />
     </div>

@@ -3,13 +3,15 @@
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 24px;
+  padding: 0;
 }
 
 .item {
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border: 1px solid black;
-  border-radius: 4px;
+  border: 2px solid black;
+  border-radius: 15px;
 }

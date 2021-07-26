@@ -7,7 +7,7 @@ function ColorPicker({ options }) {
   const { label } = options[activeOptionIndx];
 
   const makeOptionsClassNames = i => {
-    const optionClassName = [styles.option];
+    const optionClassName = [styles.option, styles.btn];
 
     if (i === activeOptionIndx) {
       optionClassName.push(styles.active);
@@ -19,7 +19,12 @@ function ColorPicker({ options }) {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Color Picker</h2>
-      <p>Выбран цвет: {label}</p>
+      <p className={styles.text}>
+        Выбран цвет:{' '}
+        <span style={{ color: label, fontSize: 20, fontWeight: 900 }}>
+          {label.toUpperCase()}
+        </span>
+      </p>
       <div>
         {options.map(({ color, label }, i) => (
           <button

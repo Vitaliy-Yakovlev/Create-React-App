@@ -1,11 +1,12 @@
 import errorImage from '../error.jpg';
+import s from './PokemonErrorView.module.css';
 
 export default function PokemonErrorView({ message }) {
   return (
     <div role="alert">
-      <img src={errorImage} width="240" alt="sabcat" />
+      <img className={s.image} src={errorImage} width="240" alt="sabcat" />
 
-      <p>{message}</p>
+      <p className={s.text}>{message}</p>
     </div>
   );
 }

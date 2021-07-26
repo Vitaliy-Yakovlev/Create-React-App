@@ -1,0 +1,48 @@
+.face {
+  text-align: center;
+  font-size: 50px;
+  color: rgb(251, 148, 79);
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.clock {
+  color: rgb(255, 0, 0);
+  display: block;
+  width: 650px;
+
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 900;
+  font-size: 50px;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn {
+  border: none;
+  padding: 8px 15px;
+  background-color: rgb(251, 148, 79);
+  color: #fff;
+  font-weight: 500;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 2px 2px 0 rgb(0 0 0 / 0.5);
+  transition: box-shadow 250ms linear;
+
+  border-radius: 10px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: rgb(225, 36, 29);
+}

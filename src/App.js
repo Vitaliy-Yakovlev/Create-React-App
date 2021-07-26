@@ -5,7 +5,7 @@ import Section from './components/Section/Section';
 import ColorPicker from './components/ColorPicker';
 import Alert from './components/Alert/Alert';
 import Container from './components/Container/Container';
-
+import SectionDiv from './components/Container/SectionDiv';
 //2
 import Counter from './components/Counter';
 import Dropdown from './components/Dropdown';
@@ -21,7 +21,7 @@ import Filter from './components/Filter';
 import Modal from './components/Modal';
 import ContentModal from './components/Modal/ContentModal';
 import Button from './components/Modal/Button';
-import Clock from './components/Modal/Clock';
+import Clock from './components/Clock/Clock';
 import IconButton from './components/IconButton';
 import { ReactComponent as AddIcon } from './components/icon/add.svg';
 //5
@@ -150,28 +150,31 @@ class App extends Component {
           </Section>
           <Section title="Good" />
           <ColorPicker options={colorPiker} />
-          <Alert text="Все пропало!!" type="success" />
-          <Alert text="Все пропало!!" type="warning" />
-          <Alert text="Все пропало!!" type="error" />
+          <SectionDiv>
+            <Alert text="Все пропало!!" type="success" />
+            <Alert text="Все пропало!!" type="warning" />
+            <Alert text="Все пропало!!" type="error" />
+          </SectionDiv>
+
           {/* 2 */}
           <Counter initialValue={10} />
           <Dropdown />
-          <IconButton onClick={this.toggleModal} aria-label="Добавить todo">
-            <AddIcon width="40px" hanging="40px" fill="#fff" />
-          </IconButton>
-          <TodoTotal total={totalTodos} learned={completedTotal} />
-          {/* 3 */}
-          <Filter value={filter} onChange={this.changeFilter} />
-          {/* 3 */}
-          <TodoList
-            todos={visibleTodos}
-            onDeleteTodo={this.deleteTodo}
-            onToggleCompleted={this.toggleCompleted}
-          />
-          {/* 3 */}
-          <InputForm onSubmit={this.formSubmitHedler} />
-          {/* 3 */}
-          {/* 4 */}
+
+          <SectionDiv>
+            <IconButton onClick={this.toggleModal} aria-label="Добавить todo">
+              <AddIcon width="40px" hanging="40px" fill="#fff" />
+            </IconButton>
+            <TodoTotal total={totalTodos} learned={completedTotal} />
+
+            <Filter value={filter} onChange={this.changeFilter} />
+
+            <TodoList
+              todos={visibleTodos}
+              onDeleteTodo={this.deleteTodo}
+              onToggleCompleted={this.toggleCompleted}
+            />
+          </SectionDiv>
+
           <Button onClick={this.toggleModal} text="Open Modal" />
           {showModal && (
             <Modal onClose={this.toggleModal}>
@@ -179,9 +182,19 @@ class App extends Component {
               <TodoEdition onSubmit={this.addTodo} />
             </Modal>
           )}
-          <Clock />
+
+          <SectionDiv>
+            <InputForm onSubmit={this.formSubmitHedler} />
+          </SectionDiv>
+
+          <SectionDiv>
+            <Clock />
+          </SectionDiv>
+
           {/* 5 */}
-          <Api />
+          <SectionDiv>
+            <Api />
+          </SectionDiv>
 
           {/* Class Work ============================================*/}
           {/* Home Work-1 ===========================================*/}

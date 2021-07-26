@@ -3,6 +3,7 @@ import PokemonErrorView from '../PokemonErrorView';
 import PokemonDataView from '../PokemonDataView';
 import PokemonPendingView from '../PokemonPendingView';
 import pokemonAPI from '../services/pokemon-api';
+import s from './PokemonInfo.module.css';
 
 const Status = {
   IDLE: 'idle',
@@ -37,7 +38,7 @@ export default class PokemonInfo extends Component {
     const { pokemonName } = this.props;
 
     if (status === 'idle') {
-      return <div>Введите имя покемона.</div>;
+      return <div className={s.namePokemon}>Введите имя покемона.</div>;
     }
 
     if (status === 'pending') {

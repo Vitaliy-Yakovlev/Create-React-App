@@ -1,7 +1,9 @@
+import s from './TodoTotal.module.css';
+
 const TodoTotal = ({ total, learned }) => (
-  <div>
-    <p>Общее кол-во: {total}</p>
-    <p> Выучили: {learned}</p>
+  <div className={s.container}>
+    <p className={s.text}>Общее кол-во: {total}</p>
+    <p className={s.text}> Выучили: {learned}</p>
   </div>
 );
 

@@ -1,18 +1,42 @@
+.form {
+  text-align: center;
+}
+
 .label {
   width: 250px;
-
   font-size: 20px;
   margin-bottom: 15px;
+  margin-left: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.label:hover,
+.label:focus {
+  color: rgb(3, 91, 241);
+}
+
+.text {
+  font-size: 20px;
+  line-height: 1.71;
+
+  letter-spacing: 0.03em;
 }
 
 .input {
   margin-top: 10px;
   margin-bottom: 25px;
+  margin-left: 15px;
   padding: 5px;
   border-radius: 10px;
   outline: none;
   box-shadow: 1px 2px 2px 0 rgb(0 0 0 / 0.5);
 }
+
+.radio {
+  margin-right: 10px;
+}
+
 .btn:hover,
 .btn:focus {
   background-color: rgb(29, 182, 225);

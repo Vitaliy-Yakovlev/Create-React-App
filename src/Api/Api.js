@@ -15,11 +15,11 @@ class Api extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <PokemonForm onSubmit={this.handleFormSubmit} />
         <PokemonInfo pokemonName={this.state.pokemonName} />
         <ToastContainer autoClose={5000} />
-      </div>
+      </>
     );
   }
 }

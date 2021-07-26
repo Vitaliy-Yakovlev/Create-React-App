@@ -2,7 +2,10 @@
   position: relative;
   width: 400px;
   padding: 20px;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-bottom: 70px;
+  margin-top: 70px;
 }
 
 .menu {
@@ -13,11 +16,13 @@
   padding: 20px;
   text-align: center;
   background-color: teal;
+  border-radius: 15px;
   color: white;
 }
 
 .btn {
   border: none;
+  border-radius: 15px;
   padding: 10px 15px;
   background-color: teal;
   color: #fff;

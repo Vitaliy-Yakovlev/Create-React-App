@@ -3,6 +3,8 @@
   padding: 10px 20px;
   background-color: gray;
   color: #fff;
+  width: 500px;
+  border-radius: 5px;
 }
 
 .error {

@@ -2,8 +2,9 @@ import { Component } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import s from './PokemonForm.module.css';
 
-const styles = { from: { mapginBotton: 20 } };
+const styles = { from: { marginBolton: 20 } };
 
 export default class PokemonForm extends Component {
   state = {
@@ -28,14 +29,15 @@ export default class PokemonForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} style={styles.from}>
+      <form onSubmit={this.handleSubmit} className={s.from}>
         <input
+          className={s.input}
           type="text"
           name="pokemonName"
           value={this.state.pokemonName}
           onChange={this.handleNameChange}
         />
-        <button type="submit">
+        <button type="submit" className={s.btn}>
           <BsSearch style={{ marginRight: 8 }} />
           Найти
         </button>

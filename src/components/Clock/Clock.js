@@ -28,7 +28,10 @@ export default function Clock() {
 
   return (
     <>
-      <p className={s.face}>Текущее время: {time.toLocaleTimeString()}</p>
+      <p className={s.clock}>
+        <span className={s.face}>Текущее время:</span>{' '}
+        {time.toLocaleTimeString()}
+      </p>
       <button type="button" className={s.btn} onClick={stop}>
         Stop
       </button>

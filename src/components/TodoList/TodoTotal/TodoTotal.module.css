@@ -1,0 +1,10 @@
+.container {
+  font-size: 20px;
+}
+
+.text {
+  color: rgb(255, 65, 65);
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}

@@ -81,49 +81,53 @@ export default function InputForm({ onSubmit }) {
         ></input>
       </label>
 
-      <p>Ваш уровень:</p>
+      <p className={s.text}>Ваш уровень:</p>
 
       <label className={s.label}>
-        Junior
         <input
+          className={s.radio}
           type="radio"
           name="experience"
           value="junior"
           onChange={handleInputChange}
           checked={experience === 'junior'}
         ></input>
+        Junior
       </label>
 
-      <label>
-        Middle
+      <label className={s.label}>
         <input
+          className={s.radio}
           type="radio"
           name="experience"
           value="middle"
           onChange={handleInputChange}
           checked={experience === 'middle'}
         ></input>
+        Middle
       </label>
 
-      <label>
-        Senior
+      <label className={s.label}>
         <input
+          className={s.radio}
           type="radio"
           name="experience"
           value="senior"
           onChange={handleInputChange}
           checked={experience === 'senior'}
         ></input>
+        Senior
       </label>
 
-      <label>
-        Принимаю условие соглашения
+      <label className={s.label}>
         <input
+          className={s.radio}
           type="checkbox"
           name="licence"
           checked={licence}
           onChange={handleLicenseChange}
         ></input>
+        Принимаю условие соглашения
       </label>
 
       <button className={s.btn} type="submit" disabled={!licence}>
