@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/create-react-app/static/css/main.b89cbf31.chunk.css",
-    "main.js": "/create-react-app/static/js/main.8d227cba.chunk.js",
-    "main.js.map": "/create-react-app/static/js/main.8d227cba.chunk.js.map",
+    "main.css": "/create-react-app/static/css/main.44a89af7.chunk.css",
+    "main.js": "/create-react-app/static/js/main.5dca66b1.chunk.js",
+    "main.js.map": "/create-react-app/static/js/main.5dca66b1.chunk.js.map",
     "runtime-main.js": "/create-react-app/static/js/runtime-main.2995280b.js",
     "runtime-main.js.map": "/create-react-app/static/js/runtime-main.2995280b.js.map",
-    "static/css/2.d9ab4ec0.chunk.css": "/create-react-app/static/css/2.d9ab4ec0.chunk.css",
-    "static/js/2.3f7b05d7.chunk.js": "/create-react-app/static/js/2.3f7b05d7.chunk.js",
-    "static/js/2.3f7b05d7.chunk.js.map": "/create-react-app/static/js/2.3f7b05d7.chunk.js.map",
+    "static/css/2.df767e7e.chunk.css": "/create-react-app/static/css/2.df767e7e.chunk.css",
+    "static/js/2.caaffd97.chunk.js": "/create-react-app/static/js/2.caaffd97.chunk.js",
+    "static/js/2.caaffd97.chunk.js.map": "/create-react-app/static/js/2.caaffd97.chunk.js.map",
     "index.html": "/create-react-app/index.html",
-    "static/css/2.d9ab4ec0.chunk.css.map": "/create-react-app/static/css/2.d9ab4ec0.chunk.css.map",
-    "static/css/main.b89cbf31.chunk.css.map": "/create-react-app/static/css/main.b89cbf31.chunk.css.map",
-    "static/js/2.3f7b05d7.chunk.js.LICENSE.txt": "/create-react-app/static/js/2.3f7b05d7.chunk.js.LICENSE.txt",
+    "static/css/2.df767e7e.chunk.css.map": "/create-react-app/static/css/2.df767e7e.chunk.css.map",
+    "static/css/main.44a89af7.chunk.css.map": "/create-react-app/static/css/main.44a89af7.chunk.css.map",
+    "static/js/2.caaffd97.chunk.js.LICENSE.txt": "/create-react-app/static/js/2.caaffd97.chunk.js.LICENSE.txt",
     "static/media/add.125a09fa.svg": "/create-react-app/static/media/add.125a09fa.svg",
+    "static/media/avatar.e44fc4e2.png": "/create-react-app/static/media/avatar.e44fc4e2.png",
     "static/media/default.2e01288c.jpg": "/create-react-app/static/media/default.2e01288c.jpg",
     "static/media/delete.a59ececf.svg": "/create-react-app/static/media/delete.a59ececf.svg",
     "static/media/error.7d86105a.jpg": "/create-react-app/static/media/error.7d86105a.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2995280b.js",
-    "static/css/2.d9ab4ec0.chunk.css",
-    "static/js/2.3f7b05d7.chunk.js",
-    "static/css/main.b89cbf31.chunk.css",
-    "static/js/main.8d227cba.chunk.js"
+    "static/css/2.df767e7e.chunk.css",
+    "static/js/2.caaffd97.chunk.js",
+    "static/css/main.44a89af7.chunk.css",
+    "static/js/main.5dca66b1.chunk.js"
   ]
 }
