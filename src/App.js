@@ -6,6 +6,7 @@ import ColorPicker from './components/ColorPicker';
 import Alert from './components/Alert/Alert';
 import Container from './components/Container/Container';
 import SectionDiv from './components/Container/SectionDiv';
+import AppBar from './components/AppBar/AppBar';
 //2
 import Counter from './components/Counter';
 import Dropdown from './components/Dropdown';
@@ -144,6 +145,7 @@ class App extends Component {
     return (
       <>
         <Container>
+          <AppBar />
           {/* Class Work ============================================*/}
           <Section title="Топ недели">
             <PaintingList items={paintings} />

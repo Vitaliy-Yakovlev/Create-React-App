@@ -4,8 +4,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import s from './PokemonForm.module.css';
 
-const styles = { from: { marginBolton: 20 } };
-
 export default class PokemonForm extends Component {
   state = {
     pokemonName: '',
