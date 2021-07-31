@@ -1,4 +1,5 @@
 import errorImage from '../error.jpg';
+
 import s from './PokemonErrorView.module.css';
 
 export default function PokemonErrorView({ message }) {

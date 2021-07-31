@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Contacts.module.css';
 
-const Contacts = ({ contacts, onClick }) => {
+const Contacts = ({ contactsPhone, onClick }) => {
   return (
     <ul className={s.list}>
-      {contacts.map(({ name, id, number }) => {
+      {contactsPhone.map(({ name, id, number }) => {
         return (
           <li className={s.item} key={id}>
             {name}: {number}
@@ -20,7 +20,7 @@ const Contacts = ({ contacts, onClick }) => {
 };
 
 Contacts.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  contactsPhone: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

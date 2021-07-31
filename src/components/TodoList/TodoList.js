@@ -3,7 +3,6 @@ import Todo from './Todo';
 import s from './TodoList.module.css';
 
 const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => {
-  console.log(Object(todos));
   return (
     <ul className={s.todoList}>
       {todos.map(({ id, text, completed }) => (
