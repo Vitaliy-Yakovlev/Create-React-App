@@ -1,30 +1,52 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Controls from './Controls';
+import { connect } from 'react-redux';
+import * as actions from '../../redux/counter/counter-actions';
 import s from './Counter.module.css';
 
-export default function Counter() {
-  const [initialValue, setInitialValue] = useState(0);
+function Counter({ value, step, onIncrement, onDecrement }) {
+  // const [initialValue, setInitialValue] = useState(0);
 
-  const handleIncrement = () => {
-    setInitialValue(state => state + 1);
-  };
+  // const handleIncrement = () => {
+  //   setInitialValue(state => state + 1);
+  // };
 
-  const handleDecrement = () => {
-    setInitialValue(state => state - 1);
-  };
+  // const handleDecrement = () => {
+  //   setInitialValue(state => state - 1);
+  // };
 
   useEffect(() => {
-    document.title = `HomeWork:${initialValue}`;
-  }, [initialValue]);
+    document.title = `HomeWork:${value}`;
+  }, [value]);
 
   return (
     <div className={s.counter}>
-      <span className={s.value}>({initialValue})</span>
+      <span className={s.value}>({value})</span>
 
-      <Controls onIncrement={handleIncrement} onDecrement={handleDecrement} />
+      <Controls
+        step={step}
+        onIncrement={() => onIncrement(step)}
+        onDecrement={() => onDecrement(step)}
+      />
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    value: state.counter.value,
+    step: state.counter.step,
+  };
+};
+
+const mapDispatchToPro = dispatch => {
+  return {
+    onIncrement: value => dispatch(actions.increment(value)),
+    onDecrement: value => dispatch(actions.decrement(value)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToPro)(Counter);
 
 // class Counter extends Component {
 //   static defaultProps = {
