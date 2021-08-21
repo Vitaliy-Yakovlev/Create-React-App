@@ -8,3 +8,7 @@ export const addTodo = createAction('todos/add', text => ({
     completed: false,
   },
 }));
+
+export const deleteTodo = createAction('todos/delete');
+export const changeFilter = createAction('counter/changeFilter');
+export const toggleCompleted = createAction('todos/toggleCompleted');

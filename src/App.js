@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 // import Section from './components/Section/Section';
 import Container from './components/Container/Container';
 import AppBar from './components/AppBar/AppBar';
-import shortid from 'shortid';
 import Filter from './components/Filter';
 import ContentModal from './components/Modal/ContentModal';
 import Button from './components/Modal/Button';
@@ -17,9 +16,7 @@ import user from './components/HomeWork-1/Profile/user.json';
 import statisticalData from './components/HomeWork-1/Statistics/statistical-data.json';
 import friends from './components/HomeWork-1/FriendList/friends.json';
 import transactions from './components/HomeWork-1/TransactionHistory/transactions.json';
-import todosArray from './components/TodoList/todos.json';
 import Loader from './components/Loader';
-import useLocalStorage from './components/Hooks/useLocalStorage';
 
 // Линивая загрузка
 
@@ -108,36 +105,10 @@ const TransactionHistory = lazy(() =>
 );
 
 export default function App() {
-  const [todos, setTodos] = useLocalStorage('todo', todosArray);
-  const [filter, setFilter] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  const changeFilter = e => {
-    setFilter(e.currentTarget.value);
-  };
-
-  const addTodo = text => {
-    const todo = {
-      id: shortid.generate(),
-      text,
-      completed: false,
-    };
-
-    setTodos([todo, ...todos]);
-
-    toggleModal();
-  };
-
-  const deleteTodo = todoId => {
-    setTodos(prevState => prevState.filter(todo => todo.id !== todoId));
-  };
-
-  const toggleCompleted = todoId => {
-    setTodos(
-      todos.map(todo =>
-        todo.id === todoId ? { ...todo, completed: !todo.completed } : todo,
-      ),
-    );
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   const formSubmitHedler = data => {
@@ -145,22 +116,6 @@ export default function App() {
       console.log(data);
     }, 1000);
   };
-
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-
-  const totalTodos = todos.length;
-
-  const completedTotal = todos.reduce((total, todo) => {
-    return todo.completed ? total + 1 : total;
-  }, 0);
-
-  const normalizedFilter = filter.toLowerCase();
-
-  const visibleTodos = todos.filter(todo =>
-    todo.text.toLowerCase().includes(normalizedFilter),
-  );
 
   return (
     <>
@@ -210,21 +165,17 @@ export default function App() {
                 <IconButton onClick={toggleModal} aria-label="Добавить todo">
                   <AddIcon width="40px" hanging="40px" fill="#fff" />
                 </IconButton>
-                <TodoTotal total={totalTodos} learned={completedTotal} />
+                <TodoTotal />
 
-                <Filter value={filter} onChange={changeFilter} />
+                <Filter />
 
-                <TodoList
-                  todos={visibleTodos}
-                  onDeleteTodo={deleteTodo}
-                  onToggleCompleted={toggleCompleted}
-                />
+                <TodoList />
 
                 <Button onClick={toggleModal} text="Open Modal" />
                 {showModal && (
                   <Modal onClose={toggleModal}>
                     <ContentModal onClick={toggleModal} />
-                    <TodoEdition onSubmit={addTodo} />
+                    <TodoEdition onSave={toggleModal} />
                   </Modal>
                 )}
               </SectionDiv>

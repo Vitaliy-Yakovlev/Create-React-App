@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import * as todosActions from '../../redux/todos/todos-actions';
 import s from './TodoEdition.module.css';
 
-export default function TodoEdition({ onSubmit }) {
+export default function TodoEdition({ onSave }) {
   const [message, setMessage] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     setMessage(e.currentTarget.value);
@@ -11,7 +15,12 @@ export default function TodoEdition({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    onSubmit(message);
+    if (message === '') {
+      return alert('Введите имя ');
+    }
+    dispatch(todosActions.addTodo(message));
+    onSave();
+    setMessage('');
   };
 
   return (
