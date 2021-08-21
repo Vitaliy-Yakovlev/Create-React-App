@@ -3,8 +3,8 @@ import s from './Loader.module.css';
 
 const Spinner = () => (
   <Loader
-    type="Puff"
-    color="#21f36e"
+    type="Bars"
+    color="rgb(104, 204, 153)"
     height={100}
     width={100}
     timeout={1000}

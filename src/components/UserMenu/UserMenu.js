@@ -11,7 +11,7 @@ export default function UserMenu({ onLogOut, user }) {
         height="32"
         className={s.avatar}
       />
-      <p className={s.name}>Добро пожаловать, {user.name}</p>
+      <p className={s.name}>Здравствуй, {user.name}</p>
       <button className={s.btn} type="button" onClick={onLogOut}>
         Выйти
       </button>

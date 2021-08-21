@@ -3,7 +3,12 @@ import s from './Navigation.module.css';
 
 const Navigation = () => (
   <nav>
-    <NavLink to="/" exact className={s.link} activeClassName={s.activeLink}>
+    <NavLink
+      to="/create-react-app"
+      exact
+      className={s.link}
+      activeClassName={s.activeLink}
+    >
       Главная
     </NavLink>
 

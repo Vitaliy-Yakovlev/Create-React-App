@@ -1,65 +1,111 @@
-//Class Work========================================================================================
 import { lazy, Suspense } from 'react';
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import PaintingList from './components/Painting/PaintingList';
-import Section from './components/Section/Section';
-import ColorPicker from './components/ColorPicker';
-import Alert from './components/Alert/Alert';
+// import Section from './components/Section/Section';
 import Container from './components/Container/Container';
-import SectionDiv from './components/Container/SectionDiv';
 import AppBar from './components/AppBar/AppBar';
-//2
-import Counter from './components/Counter';
-import Dropdown from './components/Dropdown';
-import TodoList from './components/TodoList';
-import TodoTotal from './components/TodoList/TodoTotal';
-//3
-import InputForm from './components/FormInput';
-import TodoEdition from './components/TodoEdition';
 import shortid from 'shortid';
 import Filter from './components/Filter';
-
-//4
-import Modal from './components/Modal';
 import ContentModal from './components/Modal/ContentModal';
 import Button from './components/Modal/Button';
-import Clock from './components/Clock/Clock';
 import IconButton from './components/IconButton';
 import { ReactComponent as AddIcon } from './components/icon/add.svg';
-//5
-import Api from './Api';
-
 // import { ReactComponent as DeleteIcon } from './components/icon/delete.svg';
-
 import paintings from './components/Painting/paintings.json';
 import colorPiker from './components/ColorPicker/colorPicker.json';
-//Class Work========================================================================================
-
-//Home Work #1======================================================================================
-import Profile from './components/HomeWork-1/Profile/Profile';
-import Statistics from './components/HomeWork-1/Statistics/Statistics';
-import FriendList from './components/HomeWork-1/FriendList/FriendList';
-import TransactionHistory from './components/HomeWork-1/TransactionHistory/TransactionHistory';
-import HomeWorkPages from './components/HomeWork-1/HomeWorkPages/HomeWorkPages';
-
 import user from './components/HomeWork-1/Profile/user.json';
 import statisticalData from './components/HomeWork-1/Statistics/statistical-data.json';
 import friends from './components/HomeWork-1/FriendList/friends.json';
 import transactions from './components/HomeWork-1/TransactionHistory/transactions.json';
 import todosArray from './components/TodoList/todos.json';
-//Home Work #1======================================================================================
-
-//Home Work #2.1======================================================================================
-import HomeWorkPages2 from './components/HomeWork-2/HomeWorkPages2';
-import Feedback from './components/HomeWork-2/Feedback';
-//Home Work #2.1======================================================================================
-import Phonebook from './components/HomeWork-2/Phonebook';
-//Home Work #2.2======================================================================================
-import Heading from './components/Heading';
 import Loader from './components/Loader';
 import useLocalStorage from './components/Hooks/useLocalStorage';
-//Home Work #2.2======================================================================================
+
+// Линивая загрузка
+
+const Heading = lazy(() =>
+  import('./components/Heading' /*webpackChunkName: "heading"*/),
+);
+const PaintingList = lazy(() =>
+  import(
+    './components/Painting/PaintingList' /*webpackChunkName: "painting-list"*/
+  ),
+);
+const Phonebook = lazy(() =>
+  import('./components/HomeWork-2/Phonebook' /*webpackChunkName: "phonebook"*/),
+);
+const Feedback = lazy(() =>
+  import('./components/HomeWork-2/Feedback' /*webpackChunkName: "feedback"*/),
+);
+const ColorPicker = lazy(() =>
+  import('./components/ColorPicker' /*webpackChunkName: "color-picker"*/),
+);
+const Alert = lazy(() =>
+  import('./components/Alert/Alert' /*webpackChunkName: "alert"*/),
+);
+const Counter = lazy(() =>
+  import('./components/Counter' /*webpackChunkName: "counter"*/),
+);
+const Dropdown = lazy(() =>
+  import('./components/Dropdown' /*webpackChunkName: "dropdown"*/),
+);
+const InputForm = lazy(() =>
+  import('./components/FormInput' /*webpackChunkName: "form-input"*/),
+);
+const Modal = lazy(() =>
+  import('./components/Modal' /*webpackChunkName: "modal"*/),
+);
+const Clock = lazy(() =>
+  import('./components/Clock/Clock' /*webpackChunkName: "clock"*/),
+);
+const Api = lazy(() => import('./Api' /*webpackChunkName: "api"*/));
+const SectionDiv = lazy(() =>
+  import(
+    './components/Container/SectionDiv' /*webpackChunkName: "section-div"*/
+  ),
+);
+const TodoList = lazy(() =>
+  import('./components/TodoList' /*webpackChunkName: "todo-list"*/),
+);
+const TodoTotal = lazy(() =>
+  import('./components/TodoList/TodoTotal' /*webpackChunkName: "todo-total"*/),
+);
+const TodoEdition = lazy(() =>
+  import('./components/TodoEdition' /*webpackChunkName: "todo-edition"*/),
+);
+const Section = lazy(() =>
+  import('./components/Section/Section' /*webpackChunkName: "section"*/),
+);
+const HomeWorkPages2 = lazy(() =>
+  import(
+    './components/HomeWork-2/HomeWorkPages2' /*webpackChunkName: "homeWork-pages2"*/
+  ),
+);
+const HomeWorkPages = lazy(() =>
+  import(
+    './components/HomeWork-1/HomeWorkPages/HomeWorkPages' /*webpackChunkName: "homeWork-pages1"*/
+  ),
+);
+const Profile = lazy(() =>
+  import(
+    './components/HomeWork-1/Profile/Profile' /*webpackChunkName: "profile"*/
+  ),
+);
+const Statistics = lazy(() =>
+  import(
+    './components/HomeWork-1/Statistics/Statistics' /*webpackChunkName: "statistics"*/
+  ),
+);
+const FriendList = lazy(() =>
+  import(
+    './components/HomeWork-1/FriendList/FriendList' /*webpackChunkName: "friendList"*/
+  ),
+);
+const TransactionHistory = lazy(() =>
+  import(
+    './components/HomeWork-1/TransactionHistory/TransactionHistory' /*webpackChunkName: "transaction-history"*/
+  ),
+);
 
 export default function App() {
   const [todos, setTodos] = useLocalStorage('todo', todosArray);
@@ -122,7 +168,7 @@ export default function App() {
         <AppBar />
         <Suspense fallback={<Loader />}>
           <Switch>
-            <Route path="/" exact>
+            <Route path="/create-react-app" exact>
               <Heading text={'Выбери раздел'} />
             </Route>
 
