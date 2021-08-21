@@ -1,6 +1,7 @@
 //Class Work========================================================================================
-
+import { lazy, Suspense } from 'react';
 import React, { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import PaintingList from './components/Painting/PaintingList';
 import Section from './components/Section/Section';
 import ColorPicker from './components/ColorPicker';
@@ -55,6 +56,8 @@ import Feedback from './components/HomeWork-2/Feedback';
 //Home Work #2.1======================================================================================
 import Phonebook from './components/HomeWork-2/Phonebook';
 //Home Work #2.2======================================================================================
+import Heading from './components/Heading';
+import Loader from './components/Loader';
 import useLocalStorage from './components/Hooks/useLocalStorage';
 //Home Work #2.2======================================================================================
 
@@ -117,252 +120,122 @@ export default function App() {
     <>
       <Container>
         <AppBar />
-        {/* Class Work ============================================*/}
-        <Section title="Топ недели">
-          <PaintingList items={paintings} />
-        </Section>
-        <Section title="Good" />
-        <ColorPicker options={colorPiker} />
-        <SectionDiv>
-          <Alert text="Все пропало!!" type="success" />
-          <Alert text="Все пропало!!" type="warning" />
-          <Alert text="Все пропало!!" type="error" />
-        </SectionDiv>
+        <Suspense fallback={<Loader />}>
+          <Switch>
+            <Route path="/" exact>
+              <Heading text={'Выбери раздел'} />
+            </Route>
 
-        {/* 2 */}
-        <Counter initialValue={10} />
-        <Dropdown />
+            <Route path="/painting">
+              <Heading text={'Painting List'} />
+              <Section title="Топ недели">
+                <PaintingList items={paintings} />
+              </Section>
+              <Section title="Good" />
+            </Route>
 
-        <SectionDiv>
-          <IconButton onClick={toggleModal} aria-label="Добавить todo">
-            <AddIcon width="40px" hanging="40px" fill="#fff" />
-          </IconButton>
-          <TodoTotal total={totalTodos} learned={completedTotal} />
+            <Route path="/color_picker">
+              <Heading text={'Color Picker'} />
+              <ColorPicker options={colorPiker} />
+            </Route>
 
-          <Filter value={filter} onChange={changeFilter} />
+            <Route path="/alert">
+              <Heading text={'Alert'} />
+              <SectionDiv>
+                <Alert text="Все пропало!!" type="success" />
+                <Alert text="Все пропало!!" type="warning" />
+                <Alert text="Все пропало!!" type="error" />
+              </SectionDiv>
+            </Route>
 
-          <TodoList
-            todos={visibleTodos}
-            onDeleteTodo={deleteTodo}
-            onToggleCompleted={toggleCompleted}
-          />
-        </SectionDiv>
+            <Route path="/counter">
+              <Heading text={'Counter'} />
+              <Counter initialValue={10} />
+            </Route>
 
-        <Button onClick={toggleModal} text="Open Modal" />
-        {showModal && (
-          <Modal onClose={toggleModal}>
-            <ContentModal onClick={toggleModal} />
-            <TodoEdition onSubmit={addTodo} />
-          </Modal>
-        )}
+            <Route path="/dropdown">
+              <Heading text={'Dropdown'} />
+              <Dropdown />
+            </Route>
 
-        <SectionDiv>
-          <InputForm onSubmit={formSubmitHedler} />
-        </SectionDiv>
+            <Route path="/todos">
+              <Heading text={'Todos'} />
+              <SectionDiv>
+                <IconButton onClick={toggleModal} aria-label="Добавить todo">
+                  <AddIcon width="40px" hanging="40px" fill="#fff" />
+                </IconButton>
+                <TodoTotal total={totalTodos} learned={completedTotal} />
 
-        <SectionDiv>
-          <Clock />
-        </SectionDiv>
+                <Filter value={filter} onChange={changeFilter} />
 
-        {/* 5 */}
-        <SectionDiv>
-          <Api />
-        </SectionDiv>
+                <TodoList
+                  todos={visibleTodos}
+                  onDeleteTodo={deleteTodo}
+                  onToggleCompleted={toggleCompleted}
+                />
 
-        {/* Class Work ============================================*/}
-        {/* Home Work-1 ===========================================*/}
-        <HomeWorkPages>
-          <Profile
-            name={user.name}
-            tag={user.tag}
-            location={user.location}
-            avatar={user.avatar}
-            stats={user.stats}
-          />
-          <Statistics title="Upload stats" stats={statisticalData} />
-          <Statistics stats={statisticalData} />
-          <FriendList friends={friends} />
-          <TransactionHistory items={transactions} />
-        </HomeWorkPages>
-        {/* Home Work-1 ===========================================*/}
-        {/* Home Work-2.1 =========================================*/}
-        <HomeWorkPages2>
-          <Feedback />
-          <Phonebook />
-        </HomeWorkPages2>
-        {/* Home Work-2.1 =========================================*/}
+                <Button onClick={toggleModal} text="Open Modal" />
+                {showModal && (
+                  <Modal onClose={toggleModal}>
+                    <ContentModal onClick={toggleModal} />
+                    <TodoEdition onSubmit={addTodo} />
+                  </Modal>
+                )}
+              </SectionDiv>
+            </Route>
+
+            <Route path="/form_input">
+              <Heading text={'Input Form'} />
+              <SectionDiv>
+                <InputForm onSubmit={formSubmitHedler} />
+              </SectionDiv>
+            </Route>
+
+            <Route path="/time">
+              <Heading text={'Time'} />
+              <SectionDiv>
+                <Clock />
+              </SectionDiv>
+            </Route>
+
+            <Route path="/pokemon">
+              <Heading text={'Pokemon'} />
+              <SectionDiv>
+                <Api />
+              </SectionDiv>
+            </Route>
+
+            <Route path="/home_work_1">
+              <Heading text={'HomeWork Pages 1'} />
+              <HomeWorkPages>
+                <Profile
+                  name={user.name}
+                  tag={user.tag}
+                  location={user.location}
+                  avatar={user.avatar}
+                  stats={user.stats}
+                />
+                <Statistics title="Upload stats" stats={statisticalData} />
+                <Statistics stats={statisticalData} />
+                <FriendList friends={friends} />
+                <TransactionHistory items={transactions} />
+              </HomeWorkPages>
+            </Route>
+
+            <Route path="/home_work_2">
+              <Heading text={'HomeWork Pages 2'} />
+              <HomeWorkPages2>
+                <Feedback />
+                <Phonebook />
+              </HomeWorkPages2>
+            </Route>
+
+            <Route>
+              <h2>404 Страница не найдена! Введите правильный запрос!</h2>
+            </Route>
+          </Switch>
+        </Suspense>
       </Container>
     </>
   );
 }
-
-// class App extends Component {
-//   state = {
-//     todos: todos,
-//     filter: '',
-//     showModal: false,
-//   };
-
-//   componentDidMount() {
-//     const todos = localStorage.getItem('todos');
-//     const passedTodos = JSON.parse(todos);
-
-//     if (passedTodos) {
-//       this.setState({ todos: passedTodos });
-//     }
-//   }
-
-//   componentDidUpdate(prevProps, prevState) {
-//     const nextTodos = this.state.todos;
-//     const prevTodos = prevState.todos;
-
-//     if (nextTodos !== prevTodos) {
-//       console.log('Обновилось поле todos, записываю todos в хранилище');
-//       localStorage.setItem('todos', JSON.stringify(nextTodos));
-//     }
-//   }
-
-//   changeFilter = e => {
-//     this.setState({ filter: e.currentTarget.value });
-//   };
-
-//   addTodo = text => {
-//     const todo = {
-//       id: shortid.generate(),
-//       text,
-//       completed: false,
-//     };
-
-//     this.setState(({ todos }) => ({ todos: [todo, ...todos] }));
-
-//     this.toggleModal();
-//   };
-
-//   deleteTodo = todoId => {
-//     this.setState(prevState => ({
-//       todos: prevState.todos.filter(todo => todo.id !== todoId),
-//     }));
-//   };
-
-//   toggleCompleted = todoId => {
-//     this.setState(({ todos }) => ({
-//       todos: todos.map(todo =>
-//         todo.id === todoId ? { ...todo, completed: !todo.completed } : todo,
-//       ),
-//     }));
-//   };
-
-//   formSubmitHedler = data => {
-//     setTimeout(() => {
-//       console.log(data);
-//     }, 1000);
-//   };
-
-//   toggleModal = () => {
-//     this.setState(({ showModal }) => ({
-//       showModal: !showModal,
-//     }));
-//   };
-
-//   render() {
-//     const { todos, filter } = this.state;
-//     const totalTodos = todos.length;
-
-//     const completedTotal = todos.reduce(
-//       (total, todo) => (todo.completed ? total + 1 : total),
-//       0,
-//     );
-
-//     const normalizedFilter = filter.toLowerCase();
-
-//     const visibleTodos = todos.filter(todo =>
-//       todo.text.toLowerCase().includes(normalizedFilter),
-//     );
-
-//     const { showModal } = this.state;
-
-//     return (
-//       <>
-// <Container>
-//   <AppBar />
-//   {/* Class Work ============================================*/}
-//   <Section title="Топ недели">
-//     <PaintingList items={paintings} />
-//   </Section>
-//   <Section title="Good" />
-//   <ColorPicker options={colorPiker} />
-//   <SectionDiv>
-//     <Alert text="Все пропало!!" type="success" />
-//     <Alert text="Все пропало!!" type="warning" />
-//     <Alert text="Все пропало!!" type="error" />
-//   </SectionDiv>
-
-//   {/* 2 */}
-//   <Counter initialValue={10} />
-//   <Dropdown />
-
-//   <SectionDiv>
-//     <IconButton onClick={this.toggleModal} aria-label="Добавить todo">
-//       <AddIcon width="40px" hanging="40px" fill="#fff" />
-//     </IconButton>
-//     <TodoTotal total={totalTodos} learned={completedTotal} />
-
-//     <Filter value={filter} onChange={this.changeFilter} />
-
-//     <TodoList
-//       todos={visibleTodos}
-//       onDeleteTodo={this.deleteTodo}
-//       onToggleCompleted={this.toggleCompleted}
-//     />
-//   </SectionDiv>
-
-//   <Button onClick={this.toggleModal} text="Open Modal" />
-//   {showModal && (
-//     <Modal onClose={this.toggleModal}>
-//       <ContentModal onClick={this.toggleModal} />
-//       <TodoEdition onSubmit={this.addTodo} />
-//     </Modal>
-//   )}
-
-//   <SectionDiv>
-//     <InputForm onSubmit={this.formSubmitHedler} />
-//   </SectionDiv>
-
-//   <SectionDiv>
-//     <Clock />
-//   </SectionDiv>
-
-//   {/* 5 */}
-//   <SectionDiv>
-//     <Api />
-//   </SectionDiv>
-
-//   {/* Class Work ============================================*/}
-//   {/* Home Work-1 ===========================================*/}
-//   <HomeWorkPages>
-//     <Profile
-//       name={user.name}
-//       tag={user.tag}
-//       location={user.location}
-//       avatar={user.avatar}
-//       stats={user.stats}
-//     />
-//     <Statistics title="Upload stats" stats={statisticalData} />
-//     <Statistics stats={statisticalData} />
-//     <FriendList friends={friends} />
-//     <TransactionHistory items={transactions} />
-//   </HomeWorkPages>
-//   {/* Home Work-1 ===========================================*/}
-//   {/* Home Work-2.1 =========================================*/}
-//   <HomeWorkPages2>
-//     <Feedback />
-//     <Phonebook />
-//   </HomeWorkPages2>
-//   {/* Home Work-2.1 =========================================*/}
-// </Container>
-//       </>
-//     );
-//   }
-// }
-
-// export default App;

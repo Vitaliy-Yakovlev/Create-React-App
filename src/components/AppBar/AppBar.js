@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import UserMenu from '../UserMenu/UserMenu';
 import authContext from '../../contexts/auth/context';
+import Navigation from '../Navigation';
 import s from './AppBar.module.css';
 
 export default function AppBar() {
@@ -8,6 +9,7 @@ export default function AppBar() {
 
   return (
     <header className={s.header}>
+      <Navigation />
       {isLoggedIn ? (
         <UserMenu onLogOut={onLogOut} user={user} />
       ) : (
