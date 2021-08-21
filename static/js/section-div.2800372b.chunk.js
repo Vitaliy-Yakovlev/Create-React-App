@@ -1,0 +1,2 @@
+(this["webpackJsonpcreate-react-app"]=this["webpackJsonpcreate-react-app"]||[]).push([[19],{119:function(e,t,c){e.exports={section:"SectionDiv_section__beZWa"}},148:function(e,t,c){"use strict";c.r(t),c.d(t,"default",(function(){return i}));var n=c(119),a=c.n(n),r=c(1);var i=function(e){var t=e.children;return Object(r.jsx)("div",{className:a.a.section,children:t})}}}]);
+//# sourceMappingURL=section-div.2800372b.chunk.js.map

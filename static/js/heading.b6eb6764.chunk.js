@@ -1,0 +1,2 @@
+(this["webpackJsonpcreate-react-app"]=this["webpackJsonpcreate-react-app"]||[]).push([[9],{143:function(t,e,n){"use strict";n.r(e),n.d(e,"default",(function(){return i}));var a=n(94),c=n.n(a),r=n(1);function i(t){var e=t.text;return Object(r.jsx)("h1",{className:c.a.title,children:e})}},94:function(t,e,n){t.exports={title:"Heading_title__InCxW"}}}]);
+//# sourceMappingURL=heading.b6eb6764.chunk.js.map

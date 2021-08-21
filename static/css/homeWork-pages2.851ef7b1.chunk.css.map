@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/HomeWork-2/HomeWorkPages2/HomeWorkPages2.module.css"],"names":[],"mappings":"AAAA,iCACE,wBAAoC,CACpC,mBACF,CAEA,6BACE,iBACF","file":"homeWork-pages2.851ef7b1.chunk.css","sourcesContent":[".container {\r\n  background-color: rgb(176, 238, 176);\r\n  padding-bottom: 50px;\r\n}\r\n\r\n.title {\r\n  text-align: center;\r\n}\r\n"]}

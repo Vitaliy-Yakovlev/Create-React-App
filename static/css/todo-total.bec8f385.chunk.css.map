@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/TodoList/TodoTotal/TodoTotal.module.css"],"names":[],"mappings":"AAAA,4BACE,cACF,CAEA,uBACE,aAAuB,CAGvB,kBACF","file":"todo-total.bec8f385.chunk.css","sourcesContent":[".container {\r\n  font-size: 20px;\r\n}\r\n\r\n.text {\r\n  color: rgb(255, 65, 65);\r\n  margin: 0;\r\n  margin-top: 20px;\r\n  margin-bottom: 10px;\r\n}\r\n"]}

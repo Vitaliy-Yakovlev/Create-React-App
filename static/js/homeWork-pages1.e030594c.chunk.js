@@ -1,0 +1,2 @@
+(this["webpackJsonpcreate-react-app"]=this["webpackJsonpcreate-react-app"]||[]).push([[10],{125:function(e,t,a){e.exports={container:"HomeWorkPages_container__3Fc02",title:"HomeWorkPages_title__2niEM"}},134:function(e,t,a){"use strict";a.r(t);var c=a(125),n=a.n(c),r=a(1);t.default=function(e){var t=e.children;return Object(r.jsxs)("div",{className:n.a.container,children:[Object(r.jsx)("h2",{className:n.a.title,children:"React. Home Wort - 1 Components"}),t]})}}}]);
+//# sourceMappingURL=homeWork-pages1.e030594c.chunk.js.map
