@@ -8,26 +8,26 @@
 2. Создаем React приложение -
 
  ``` npm
-                                                                   npx create-react-app
+          npx create-react-app
  ```
 
 3. Eсли еще не установлены, ставим - [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 4. Установить [валидация пропсов](https://www.npmjs.com/package/prop-types) -
 
 ``` npm
-                                                                   npm i prop-types
+         npm i prop-types
 ```
 
 1. Установить Prettier <a href="https://prettier.io/"><img src = "https://prettier.io/icon.png" alt ="Prettier" width =15px/></a> 
 
 ``` npm
-                                                                  npm install --save-dev prettier eslint
+         npm install --save-dev prettier eslint
 ```
 
 6. Установить lint и huskyrc -
  
 ``` npm
-                                                                  npx mrm@2 lint-staged
+         npx mrm@2 lint-staged
 ```
   
 ---
@@ -56,7 +56,7 @@
 2. Добавить пакет -
 
 ``` npm
-                                                                    npm install --save gh-pages
+         npm install --save gh-pages
  ```
 
 1. Добавить в package.json такие скрипты:
@@ -89,13 +89,13 @@ npm run deploy
 1. Устанавливаем пакет -
 
 ``` npm
-                                                                      npm install netlify-cli -g
+         npm install netlify-cli -g
  ```
 
 2. Выполняем команду -
 
 ``` npm
-                                                                      netlify login
+         netlify login
 ```
 
 3. Добавялем скрипт -  
