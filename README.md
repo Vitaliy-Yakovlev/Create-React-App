@@ -74,7 +74,12 @@ npm run deploy
 
 ## Деплой на [NETLIFY](https://app.netlify.com/) <img  alt="HTML5" width="35px" src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
 
-1. Создаем файл в корне проекта (src) ```npm netlify.toml``` *там настройка:
+1. Создаем файл в корне проекта (src) 
+*там настройка:
+
+```npm
+       netlify.toml
+``` 
   
 ``` npm
 [build]
