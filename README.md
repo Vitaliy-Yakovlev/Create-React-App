@@ -1,6 +1,6 @@
 # Гайд по [Create React App](https://create-react-app.dev/docs/getting-started/#npm) -'React'-
 
-<a href="https://create-react-app.dev/docs/getting-started/#npm">
+<a href="https://ru.reactjs.org/">
 <img src = "https://habrastorage.org/webt/z1/bu/fm/z1bufmx1tce1wxwjm92w7wz_7lq.png" alt ="React" width =800px/>
 </a>
 
