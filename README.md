@@ -1,91 +1,121 @@
-# Getting Started with Create React App
+# ГАЙД ПО СОЗДАНИЮ ПРОЕКТА -'React'-
 
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+<a href="https://create-react-app.dev/docs/getting-started/#npm">
+<img src = "https://habrastorage.org/webt/z1/bu/fm/z1bufmx1tce1wxwjm92w7wz_7lq.png" alt ="React" width =800px/>
+</a>
 
-## Available Scripts
+1. Создаем репозиторий на [Github](https://github.com/)
+2. Создаем React приложение -
 
-In the project directory, you can run:
+ ``` console
+                                    npx create-react-app
+ ```
 
-### `npm start`
+3. Eсли еще не установлены, ставим - [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+4. Установить [валидация пропсов](https://www.npmjs.com/package/prop-types) -
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+``` console
+                                    npm i prop-types
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Установить Prettier <a href="https://prettier.io/">
+<img src = "https://prettier.io/icon.png" alt ="Prettier" width =15px/>
+</a> -
 
-### `npm test`
+```console
+                                    npm install --save-dev prettier eslint
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+6. Установить lint и huskyrc -
 
-### `npm run build`
+```console
+                                    npx mrm@2 lint-staged
+```
+  
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best
-performance.
+ В VSCode => setting.json в конце добавялем для комфортной работы, после установки плагинов для авто сохранения и форматирования файлов.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```json
+{
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+```
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+Деплой на Github pages:
+[Video]( https://drive.google.com/file/d/1EOewQyS7V9SHsUbbycwgTNqB59jwhFnG/view)
 
-### `npm run eject`
+1. В файле "package.json"  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```json
+ "homepage": "https://Vitaliy-Yakovlev.github.io/my-app"
+ ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
+2. Добавить пакет -
 
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you’re on your own.
+```console
+                                    npm install --save gh-pages
+ ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn’t feel obligated to use this
-feature. However we understand that this tool wouldn’t be useful if you couldn’t
-customize it when you are ready for it.
+1. Добавить в package.json такие скрипты:
+  
+``` json  
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+```
 
-## Learn More
+```console
+npm run deploy
+```
 
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Деплой на [NETLIFY](https://app.netlify.com/) <img  alt="HTML5" width="35px" src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
 
-### Code Splitting
+1. Создаем файл в корне проекта (src) ```console netlify.toml``` *там настройка:
+  
+``` json
+[build]
+ publish = "build"
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ [[redirects]]
+  from="/*"
+  to="/index.html"
+  status = 200
+```
 
-### Analyzing the Bundle Size
+1. Устанавливаем пакет -
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```console
+                                    npm install netlify-cli -g
+ ```
 
-### Making a Progressive Web App
+2. Выполняем команду -
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```console
+                                    netlify login
+```
 
-### Advanced Configuration
+3. Добавялем скрипт -  
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+``` json "predeploy": "npm run build",
+"deploy": "netlify deploy -p"
+```
 
-### Deployment
+4. При первом деплои, стрелками выбрать : + Create & configure a new site
+5. Зайти на страницу -
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```console
+                                    netlify open --site
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Видео инструкция
+
+1. [Netlify CLI и npm-скрипты](https://drive.google.com/file/d/1sUdq5187Uf5uo5EfqPrEEE52ssPj11Xh/view)
+2. [Создания проекта и деплой](https://drive.google.com/file/d/1RXumPAthh_qJSp6hr6ImwF5ljRvWE47e/view)
