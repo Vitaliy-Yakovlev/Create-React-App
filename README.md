@@ -18,9 +18,7 @@
                                     npm i prop-types
 ```
 
-1. Установить Prettier <a href="https://prettier.io/">
-<img src = "https://prettier.io/icon.png" alt ="Prettier" width =15px/>
-</a> -
+1. Установить Prettier <a href="https://prettier.io/"><img src = "https://prettier.io/icon.png" alt ="Prettier" width =15px/></a> 
 
 ``` npm
                                     npm install --save-dev prettier eslint
