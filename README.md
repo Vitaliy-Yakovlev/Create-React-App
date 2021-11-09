@@ -7,14 +7,14 @@
 1. Создаем репозиторий на [Github](https://github.com/)
 2. Создаем React приложение -
 
- ``` console
+ ``` npm
                                     npx create-react-app
  ```
 
 3. Eсли еще не установлены, ставим - [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 4. Установить [валидация пропсов](https://www.npmjs.com/package/prop-types) -
 
-``` console
+``` npm
                                     npm i prop-types
 ```
 
@@ -22,13 +22,13 @@
 <img src = "https://prettier.io/icon.png" alt ="Prettier" width =15px/>
 </a> -
 
-```console
+``` npm
                                     npm install --save-dev prettier eslint
 ```
 
 6. Установить lint и huskyrc -
-
-```console
+ 
+``` npm
                                     npx mrm@2 lint-staged
 ```
   
@@ -57,7 +57,7 @@
 
 2. Добавить пакет -
 
-```console
+``` npm
                                     npm install --save gh-pages
  ```
 
@@ -68,7 +68,7 @@
 "deploy": "gh-pages -d build"
 ```
 
-```console
+``` npm
 npm run deploy
 ```
 
@@ -90,13 +90,13 @@ npm run deploy
 
 1. Устанавливаем пакет -
 
-```console
+``` npm
                                     npm install netlify-cli -g
  ```
 
 2. Выполняем команду -
 
-```console
+``` npm
                                     netlify login
 ```
 
@@ -109,7 +109,7 @@ npm run deploy
 4. При первом деплои, стрелками выбрать : + Create & configure a new site
 5. Зайти на страницу -
 
-```console
+``` npm
                                     netlify open --site
 ```
 
