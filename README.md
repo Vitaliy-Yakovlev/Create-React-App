@@ -76,7 +76,7 @@ npm run deploy
 
 1. Создаем файл в корне проекта (src) ```console netlify.toml``` *там настройка:
   
-``` json
+``` npm
 [build]
  publish = "build"
 
