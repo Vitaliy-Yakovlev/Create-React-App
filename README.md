@@ -7,7 +7,7 @@
 1. Создаем репозиторий на [Github](https://github.com/)
 2. Создаем React приложение -
 
- ``` console
+ ``` npm
                                     npx create-react-app
  ```
 
