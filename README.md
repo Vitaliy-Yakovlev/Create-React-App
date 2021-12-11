@@ -8,7 +8,7 @@
 2. Создаем React приложение -
 
  ``` npm
-          npx create-react-app
+          npx create-react-app .
  ```
 
 3. Eсли еще не установлены, ставим - [React DevTools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
