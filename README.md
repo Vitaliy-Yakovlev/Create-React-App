@@ -108,7 +108,7 @@ npm run deploy
 
 ``` json "predeploy": "npm run build",
 "predeploy": "npm run build",
-	 "deploy": "netlify deploy -p"
+"deploy": "netlify deploy -p"
 ```
 
 4. При первом деплои, стрелками выбрать : + Create & configure a new site
