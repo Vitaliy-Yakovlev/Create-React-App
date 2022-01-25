@@ -1,31 +1,31 @@
 [
   {
-    "avatar": "https://www.flaticon.com/svg/static/icons/svg/763/763704.svg",
-    "name": "Mango",
+    "avatar": "https://img.icons8.com/color/48/000000/logan-x-men.png",
+    "name": "Logan",
     "isOnline": true,
     "id": 1812
   },
   {
-    "avatar": "https://www.flaticon.com/svg/static/icons/svg/1998/1998671.svg",
-    "name": "Kiwi",
+    "avatar": "https://img.icons8.com/color/48/000000/mystique.png",
+    "name": "Mystique",
     "isOnline": false,
     "id": 1137
   },
   {
-    "avatar": "https://www.flaticon.com/svg/static/icons/svg/1623/1623681.svg",
-    "name": "Ajax",
+    "avatar": "https://img.icons8.com/color/48/000000/gambit.png",
+    "name": "Gambit",
     "isOnline": true,
     "id": 1213
   },
   {
-    "avatar": "https://www.flaticon.com/svg/static/icons/svg/2977/2977285.svg",
-    "name": "Jay",
+    "avatar": "https://img.icons8.com/color/48/000000/deadpool.png",
+    "name": "Deadpool",
     "isOnline": true,
     "id": 1714
   },
   {
-    "avatar": "https://www.flaticon.com/svg/static/icons/svg/1998/1998749.svg",
-    "name": "Poly",
+    "avatar": "https://img.icons8.com/color/48/000000/magneto.png",
+    "name": "Magneto",
     "isOnline": false,
     "id": 1284
   }
