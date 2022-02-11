@@ -81,8 +81,8 @@
 
 ```json
 {
-  "src/**/*.{jsx,css,scss,md}": ["prettier --write"],
-  "stc/**/*/{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix"]
+  "src/**/*.{json,css,scss,md}": ["prettier --write"],
+  "src/**/*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix"]
 }
 ```
 
@@ -178,7 +178,7 @@ npm run deploy
 5. Зайти на страницу -
 
 ```npm
-                                                                     netlify open --site
+            netlify open --site
 ```
 
 ---
